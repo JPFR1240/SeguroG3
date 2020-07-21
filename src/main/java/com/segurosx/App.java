@@ -1,7 +1,9 @@
 package com.segurosx;
 
+import com.segurosx.models.Banco;
 import com.segurosx.models.Cliente;
 import com.segurosx.models.IExportable;
+import com.segurosx.models.IExportableArray;
 import com.segurosx.models.IExportablejson;
 import com.segurosx.models.Poliza;
 import com.segurosx.models.SeguroTarjeta;
@@ -11,6 +13,7 @@ import com.segurosx.models.patterns.PolizaAdapter;
 //import com.segurosx.models.patterns.PolizaAdapter2;
 import com.segurosx.models.patterns.PolizaAdapter2;
 import com.segurosx.models.patterns.PolizaAdapterjson;
+import com.segurosx.models.patterns.SeguroAdapter;
 
 /**
  * HRCS
@@ -18,17 +21,14 @@ import com.segurosx.models.patterns.PolizaAdapterjson;
  */
 public class App 
 {
-    public static void main( String[] args )
-    {
-
+    public static void main( String[] args ){
         Cliente cliente = new Cliente("Juan Perez");
         
         SeguroVehicular seguro = new SeguroVehicular("Toyota","Yaris");
         seguro.calcularRiesgo();
 
-        //Pregunta 4
+        //Pregunta 3
         seguro.calcularCobeturaVehicular();
-        
         cliente.setCompraSeguro(seguro);
         System.out.println( seguro.getDetalleSeguro() );
 
@@ -36,7 +36,7 @@ public class App
         SeguroTarjeta seguro2 = new SeguroTarjeta("BCP");
         seguro2.calcularRiesgo();
         
-        //Pregunta 4
+        //Pregunta 3
         seguro2.calculaCoberturaTarjeta();
         seguro2.setPoliza(new Poliza(122122, "Juan Pablo", "Juan Perez"));        
         cliente.setCompraSeguro(seguro2);
@@ -68,8 +68,20 @@ public class App
         System.out.println( exportable3.aJSON() +"\n");
 
 
+        // PREGUNTA 2
+        System.out.println("\n----------a ARRAY-----------------");
+        IExportableArray exportable4 = new SeguroAdapter(seguro2);
+        System.out.println(exportable4.aArray());
+
 
         
+        // LEER Y ESCRIBIR EN LA CONSOLA DE JAVA
+        System.out.println("\n----------a ARRAY POR MEDIO DE FICHERO CVS -----------------");
+        Banco b = new Banco();
+        String archCSV = "C:\\xampp\\htdocs\\Labos de Patrones\\Miguel\\SeguroPatrones\\src\\assets\\prueba.csv";
+        exportable4.aArrayFromCsv(archCSV);
+        System.out.println(exportable4.aArrayFromCsv(archCSV));
+
 
         /**dos forma NO SIRVE*/
         /*System.out.println("\n----------a JSON 2-----------------");
