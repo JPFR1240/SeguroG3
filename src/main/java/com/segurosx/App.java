@@ -67,6 +67,10 @@ public class App
         IExportablejson exportable3 = new PolizaAdapter(seguro2.getPoliza());
         System.out.println( exportable3.aJSON() +"\n");
 
+
+
+        
+
         /**dos forma NO SIRVE*/
         /*System.out.println("\n----------a JSON 2-----------------");
         IExportable exportable4 = new PolizaAdapterjson(76656, "Juan Perez", "Juan Pablo");
