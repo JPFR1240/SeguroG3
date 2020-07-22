@@ -16,7 +16,7 @@ public class Banco {
         IExportableArray exportable4 = new SeguroAdapter(seguro);
         
         System.out.println("DEVOLVIENDO EL ARRAY");
-        this.infoSeguro = exportable4.aArrayFromCsv(seguro);
+        this.infoSeguro = exportable4.aArrayFromCsv();
         System.out.println(imprimir(this.infoSeguro));
     }
 

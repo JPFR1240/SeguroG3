@@ -71,19 +71,18 @@ public class App
 
 
         // PREGUNTA 2
-        System.out.println("\n----------a ARRAY-----------------");
-        IExportableArray exportable4 = new SeguroAdapter(seguro2);
-        System.out.println(exportable4.aArray());
+        // System.out.println("\n----------a ARRAY-----------------");
+        // IExportableArray exportable4 = new SeguroAdapter(seguro2);
+        // System.out.println(exportable4.aArray());
 
         // LEER Y ESCRIBIR EN LA CONSOLA DE JAVA
         System.out.println("\n----------a ARRAY POR MEDIO DE FICHERO CVS -----------------");
         Banco b = new Banco();
-        // String archCSV = "C:/xampp/htdocs/Labos de Patrones/Jean Piero/SeguroG3/src/assets/prueba.csv";
         // exportable4.aArrayFromCsv(archCSV);
         // System.out.println(exportable4.aArrayFromCsv(archCSV));
         b.obtnerDetalleSeguroFromCsv(seguro);
-        
-        // System.out.println(seguro.getClass().getSimpleName());
+    
+
 
 
         /**dos forma NO SIRVE*/
