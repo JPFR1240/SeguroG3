@@ -1,12 +1,12 @@
 package com.segurosx.models;
 
-public class FormaPagoDebidoAutomatico implements IFormaPago {
+public class FormaPagoDebidoAutomatico implements IFormaPagoDebitoAutomatico {
 
     @Override
     public void realizaDescuentoAutomaticoBanco() {
         System.out.println("Genera cargo en la cuenta de debito automatico");
     }
-
+/*
     @Override
     public void generaCuponPago() {
         
@@ -18,6 +18,5 @@ public class FormaPagoDebidoAutomatico implements IFormaPago {
 
         throw new UnsupportedOperationException();
     }
-
-    
+*/
 }
